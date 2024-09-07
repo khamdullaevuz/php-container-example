@@ -17,3 +17,24 @@ if(!function_exists('app'))
         return App::getContainer()->make($abstract);
     }
 }
+
+if(!function_exists('config'))
+{
+    function config($key)
+    {
+        $config = require 'config.php';
+
+        return $config[$key];
+    }
+}
+
+if(!function_exists('dd'))
+{
+    function dd($data)
+    {
+        echo '<pre>';
+        print_r($data);
+        echo '</pre>';
+        die();
+    }
+}
