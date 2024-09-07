@@ -4,9 +4,12 @@ use framework\App;
 use framework\Container;
 use framework\Database;
 
-App::setContainer(new Container());
-App::singleton(Database::class, function () {
+$container = new Container();
+
+$container->singleton(Database::class, function () {
     $config = require 'config.php';
 
     return new Database($config['database']);
 });
+
+App::setContainer($container);

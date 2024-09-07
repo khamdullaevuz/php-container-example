@@ -37,4 +37,12 @@ class Container
 
         return call_user_func($this->bindings[$key]);
     }
+
+    /**
+     * @throws Exception
+     */
+    public function make($abstract)
+    {
+        return $this->resolve($abstract);
+    }
 }
