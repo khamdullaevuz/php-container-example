@@ -3,7 +3,7 @@
 use framework\Database;
 
 require __DIR__ . '/../loader.php';
-require __DIR__ . '/../bootstrap.php';
+require base_path('bootstrap.php');
 
 try {
     $db = app()->make(Database::class);

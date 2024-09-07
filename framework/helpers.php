@@ -22,9 +22,17 @@ if(!function_exists('config'))
 {
     function config($key)
     {
-        $config = require 'config.php';
+        $config = require base_path('config.php');
 
         return $config[$key];
+    }
+}
+
+if(!function_exists('base_path'))
+{
+    function base_path($path = ''): string
+    {
+        return __DIR__ . '/../' . $path;
     }
 }
 
