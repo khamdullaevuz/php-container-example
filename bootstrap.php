@@ -6,7 +6,7 @@ use framework\Database;
 
 $container = new Container();
 
-$container->singleton(Database::class, function () {
+$container->bind(Database::class, function () {
     $config = require 'config.php';
 
     return new Database($config['database']);
