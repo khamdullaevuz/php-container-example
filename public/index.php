@@ -7,7 +7,7 @@ require base_path('bootstrap.php');
 
 try {
     $db = app()->make(Database::class);
-    print_r($db->query("SELECT * FROM notes WHERE id = :id", [
+    dd($db->query("SELECT * FROM notes WHERE id = :id", [
         'id' => 1
     ])->findOrFail());
 } catch (Exception $e) {
